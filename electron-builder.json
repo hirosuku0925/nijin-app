@@ -1,0 +1,13 @@
+{
+  "appId": "com.nijin.app.universal",
+  "productName": "NijinApp",
+  "directories": {
+    "output": "dist"
+  },
+  "win": {
+    "target": "nsis"
+  },
+  "mac": {
+    "target": ["universal", "dmg"]
+  }
+}
