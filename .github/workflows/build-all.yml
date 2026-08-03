@@ -63,8 +63,10 @@ jobs:
       - name: Generate Android Icons
         run: npx @capacitor/assets generate --android --silent || true
 
-      - name: Add Android Platform
-        run: node ./node_modules/@capacitor/cli/bin/capacitor add android
+      - name: Clean & Add Android Platform
+        run: |
+          rm -rf android
+          node ./node_modules/@capacitor/cli/bin/capacitor add android
 
       - name: Sync Capacitor
         run: node ./node_modules/@capacitor/cli/bin/capacitor sync android
