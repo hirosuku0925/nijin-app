@@ -1,15 +1,14 @@
 {
   "name": "nijin-universal",
   "version": "1.0.0",
+  "description": "nijin.app desktop and mobile viewer",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:electron": "electron-builder"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@capacitor/android": "^8.5.0",
     "@capacitor/cli": "^8.5.0",
