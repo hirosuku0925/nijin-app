@@ -6,7 +6,8 @@
   },
   "publish": null,
   "win": {
-    "target": "nsis"
+    "target": "nsis",
+    "icon": "assets/icon.ico"
   },
   "mac": {
     "target": [
@@ -14,6 +15,7 @@
         "target": "dmg",
         "arch": "universal"
       }
-    ]
+    ],
+    "icon": "assets/icon.icns"
   }
 }
