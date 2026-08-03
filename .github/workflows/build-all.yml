@@ -61,10 +61,10 @@ jobs:
         run: npm install
 
       - name: Add Android Platform
-        run: npx @capacitor/cli add android
+        run: node ./node_modules/@capacitor/cli/bin/capacitor add android
 
       - name: Sync Capacitor
-        run: npx @capacitor/cli sync android
+        run: node ./node_modules/@capacitor/cli/bin/capacitor sync android
 
       - name: Build Android APK
         run: |
