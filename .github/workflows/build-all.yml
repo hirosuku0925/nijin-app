@@ -32,7 +32,7 @@ jobs:
         run: npm install
 
       - name: Build Desktop App
-        run: npx electron-builder ${{ matrix.target-flag }}
+        run: npx electron-builder ${{ matrix.target-flag }} --publish never
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
@@ -61,14 +61,15 @@ jobs:
         run: npm install
 
       - name: Add Android Platform
-        run: npx --no-install cap add android
+        run: npx @capacitor/cli add android
 
       - name: Sync Capacitor
-        run: npx --no-install cap sync android
+        run: npx @capacitor/cli sync android
 
       - name: Build Android APK
         run: |
           cd android
+          chmod +x gradlew
           ./gradlew assembleDebug
 
       - name: Upload APK Artifact
