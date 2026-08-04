@@ -1,32 +1,51 @@
 {
   "name": "nijin-app",
   "version": "1.0.0",
-  "main": "main.js", // メインプロセスのファイル名
+  "main": "main.js",
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder"
   },
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/core": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
   "build": {
     "appId": "com.nijin.app.universal",
     "productName": "NijinApp",
-    // --- ここを追加・確認 ---
+    "directories": {
+      "output": "dist"
+    },
     "files": [
       "main.js",
       "index.html",
       "preload.js",
       "renderer.js",
-      "dist/**/*", // もしReact/Vueのビルド先が dist ならこれも必要
-      "build/**/*"   // もしReact/Vueのビルド先が build ならこれも必要
+      "dist/**/*",
+      "build/**/*"
     ],
-    // ------------------------
     "win": {
       "target": "nsis",
       "icon": "assets/icon.ico"
     },
     "mac": {
-      "target": "dmg",
-      "icon": "assets/icon.icns"
+      "target": [
+        {
+          "target": "dmg",
+          "arch": "universal"
+        }
+      ],
+      "icon": "assets/icon.icns",
+      "asar": false
+    },
+    "directories": {
+      "output": "dist"
     }
-  },
-  // ... 依存関係など
+  }
 }
