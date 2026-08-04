@@ -1,51 +1,38 @@
 {
   "name": "nijin-app",
   "version": "1.0.0",
+  "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "dist": "electron-builder"
+    "build": "vite build",
+    "dev": "vite dev",
+    "start": "electron ."
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@capacitor/android": "^7.0.0",
     "@capacitor/cli": "^7.0.0",
-    "@capacitor/core": "^7.0.0"
+    "@capacitor/core": "^7.0.0",
+    "electron": "^33.4.11"
   },
   "devDependencies": {
     "@capacitor/assets": "^3.0.5",
-    "electron": "^33.0.0",
-    "electron-builder": "^25.1.8"
+    "electron-builder": "^25.1.8",
+    "vite": "^6.0.0"
   },
   "build": {
-    "appId": "com.nijin.app.universal",
-    "productName": "NijinApp",
+    "appId": "com.example.nijinapp",
+    "productName": "nijin-app",
     "directories": {
       "output": "dist"
-    },
-    "files": [
-      "main.js",
-      "index.html",
-      "preload.js",
-      "renderer.js",
-      "dist/**/*",
-      "build/**/*"
-    ],
-    "win": {
-      "target": "nsis",
-      "icon": "assets/icon.ico"
     },
     "mac": {
-      "target": [
-        {
-          "target": "dmg",
-          "arch": "universal"
-        }
-      ],
-      "icon": "assets/icon.icns",
-      "asar": false
+      "target": ["dmg"]
     },
-    "directories": {
-      "output": "dist"
+    "win": {
+      "target": ["nsis"]
     }
   }
 }
